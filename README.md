@@ -8,6 +8,10 @@ Provide clear instructions on how to set up and run the app locally
 
 here we used the backend api for create,read,update and delete the products and orders 
 
+Links: 
+
 Live link: https://shopfiy.netlify.app/
-Git Frontend- 
+backend live Link:  https://shopify-backend-three.vercel.app/
+Git Frontend- https://github.com/Abhishekkuntare/shopify_frontend
+Git Backend- https://github.com/Abhishekkuntare/shopify_backend
 
