@@ -7,13 +7,13 @@ export const CreateProduct = () => {
   const [formData, setFormData] = useState({
     title: "",
     vendor: "",
-    productType: "",
     price: "",
     sku: "",
     inventoryQuantity: "",
     alt: "",
     src: "",
   });
+
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -49,7 +49,6 @@ export const CreateProduct = () => {
     const formDataToSend = {
       title: formData.title,
       vendor: formData.vendor,
-      productType: formData.productType,
       images: imagesArray,
       variants: variantsArray,
     };
@@ -63,7 +62,6 @@ export const CreateProduct = () => {
       setFormData({
         title: "",
         vendor: "",
-        productType: "",
         price: "",
         sku: "",
         inventoryQuantity: "",
@@ -84,9 +82,6 @@ export const CreateProduct = () => {
     }
     if (!data.vendor) {
       errors.vendor = "Vendor is required";
-    }
-    if (!data.productType) {
-      errors.productType = "Product Type is required";
     }
     if (!data.price) {
       errors.price = "Price is required";
@@ -136,21 +131,7 @@ export const CreateProduct = () => {
           />
           {errors.vendor && <p className="text-red-500">{errors.vendor}</p>}
         </div>
-        <div>
-          <label className="block mb-1">Product Type:</label>
-          <input
-            type="text"
-            name="productType"
-            value={formData.productType}
-            onChange={handleChange}
-            className={`w-full border border-gray-300 rounded px-3 py-2 ${
-              errors.productType ? "border-red-500" : ""
-            }`}
-          />
-          {errors.productType && (
-            <p className="text-red-500">{errors.productType}</p>
-          )}
-        </div>
+
         <div>
           <label className="block mb-1">Price:</label>
           <input
@@ -165,7 +146,7 @@ export const CreateProduct = () => {
           {errors.price && <p className="text-red-500">{errors.price}</p>}
         </div>
         <div>
-          <label className="block          mb-1">SKU:</label>
+          <label className="block mb-1">SKU:</label>
           <input
             type="text"
             name="sku"
